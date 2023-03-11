@@ -11,7 +11,9 @@ form.addEventListener('submit', (evento) => {
 
     let nome = evento.target.elements['nome'];
     let quantidade = evento.target.elements['quantidade'];
-
+    
+    quantidade.value = quantidade.value == '' ? 1 : quantidade.value;
+    
     var existe = itens.find(elemento => elemento.nome === nome.value);
 
     let itemAtual = {
